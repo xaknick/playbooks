@@ -22,4 +22,6 @@ terminal_tools:
       name: yazi
     - repo: atim/lazygit
       name: lazygit
+    - repo: rivenirvana/lazydocker
+      name: lazydocker
   flatpak: []
