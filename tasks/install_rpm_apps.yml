@@ -1,0 +1,30 @@
+- name: Download RPM's
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+    mode: "0644"
+  loop: "{{ rpm_apps }}"
+  loop_control:
+    label: "{{ item.name }}"
+  changed_when: false
+  become: true
+
+- name: Install RPM's
+  dnf:
+    name: "{{ item.dest }}"
+    state: present
+    disable_gpg_check: true
+  loop: "{{ rpm_apps }}"
+  loop_control:
+    label: "{{ item.name }}"
+  become: true
+
+- name: Remove installed RPM's
+  file:
+    path: "{{ item.dest }}"
+    state: absent
+  loop: "{{ rpm_apps }}"
+  loop_control:
+    label: "{{ item.name }}"
+  changed_when: false
+  become: true

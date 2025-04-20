@@ -1,0 +1,12 @@
+working_rpms:
+  - name: slack
+    url: https://downloads.slack-edge.com/desktop-releases/linux/x64/4.43.51/slack-4.43.51-0.1.el8.x86_64.rpm
+    dest: /tmp/slack.rpm
+
+  - name: gitkraken
+    url: https://release.axocdn.com/linux/gitkraken-amd64.rpm
+    dest: /tmp/gitkraken.rpm
+
+  - name: google-chrome
+    url: https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+    dest: /tmp/google-chrome.rpm
