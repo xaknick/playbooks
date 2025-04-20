@@ -1,0 +1,11 @@
+- name: Ensure that flatpak is installed
+  become: true
+  package:
+    name: flatpak
+    state: present
+
+- name: Add flathub if neccessary
+  become: true
+  command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  args:
+    creates: /var/lib/flatpak/repo/flathub.trustedkeys.gpg

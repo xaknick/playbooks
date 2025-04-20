@@ -1,0 +1,13 @@
+common_software:
+  dnf:
+    - git
+    - stow
+    - neovim
+    - gcc
+  copr:
+    - repo: wezfurlong/wezterm-nightly
+      name: wezterm
+  flatpak:
+    - app.zen_browser.zen
+    - dev.zed.Zed
+    - md.obsidian.Obsidian

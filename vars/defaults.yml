@@ -1,0 +1,2 @@
+dnf_verbose: false # install dnf packages separately
+first_run: false # set some environemt preparation

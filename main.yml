@@ -1,0 +1,32 @@
+- name: Fedora KDE automation
+  hosts: localhost
+  vars_files:
+    - vars/defaults.yml
+    - vars/common_software.yml
+    - vars/terminal_tools.yml
+
+  tasks:
+    - name: Environment configuration
+      import_tasks: tasks/set_environment.yml
+      when: first_run
+
+    - name: Fetch user's home configurations
+      import_tasks: tasks/fetch_home.yml
+      when: first_run
+      tags: home
+
+    - name: Common software
+      import_tasks: tasks/install_software.yml
+      vars:
+        software: "{{ common_software }}"
+      tags: common
+
+    - name: Terminal tools
+      import_tasks: tasks/install_software.yml
+      vars:
+        software: "{{ terminal_tools }}"
+      tags: terminal
+
+    - name: Zsh and shell tools
+      import_tasks: tasks/install_shell.yml
+      tags: shell

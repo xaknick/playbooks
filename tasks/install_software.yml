@@ -1,0 +1,44 @@
+- name: Install dnf packages as a batch
+  become: true
+  package:
+    name: "{{ software.dnf }}"
+    state: present
+  when:
+    - software.dnf is defined
+    - not dnf_verbose
+
+- name: Install dnf packages separately
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ software.dnf }}"
+  loop_control:
+    label: "{{ item }}"
+  when:
+    - software.dnf is defined
+    - dnf_verbose
+
+- name: Enable copr repositories
+  become: true
+  command: dnf copr enable -y "{{ item.repo }}"
+  args:
+    creates: "/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:{{ item.repo | replace('/', ':') }}.repo"
+  loop: "{{ software.copr }}"
+  when: software.copr is defined
+
+- name: Install copr packages
+  become: true
+  package:
+    name: "{{ item.name }}"
+    state: present
+  loop: "{{ software.copr }}"
+  when: software.copr is defined
+
+- name: Install flatpak packages
+  flatpak:
+    name: "{{ item }}"
+    state: present
+    remote: flathub
+  loop: "{{ software.flatpak }}"
+  when: software.flatpak is defined

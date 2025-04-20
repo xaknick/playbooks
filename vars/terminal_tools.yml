@@ -1,0 +1,25 @@
+terminal_tools:
+  dnf:
+    - zip
+    - unzip
+    - jq
+    - file
+    - which
+    - tree
+    - wget
+    - curl
+
+    - bat
+    - zoxide
+    - fastfetch
+    - figlet
+    - btop
+    - ncdu
+  copr:
+    - repo: alternateved/eza
+      name: eza
+    - repo: lihaohong/yazi
+      name: yazi
+    - repo: atim/lazygit
+      name: lazygit
+  flatpak: []
