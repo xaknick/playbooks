@@ -4,6 +4,7 @@ common_software:
     - stow
     - neovim
     - gcc
+    - g++ # for nvim plugins
   copr:
     - repo: wezfurlong/wezterm-nightly
       name: wezterm
