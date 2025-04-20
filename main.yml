@@ -10,11 +10,12 @@
   tasks:
     - name: Environment configuration
       import_tasks: tasks/set_environment.yml
-      when: first_run
+      when: first_run | default(false) or 'environment' in ansible_run_tags
+      tags: environment
 
     - name: Fetch user's home configurations
       import_tasks: tasks/fetch_home.yml
-      when: first_run
+      when: first_run | default(false) or 'home' in ansible_run_tags
       tags: home
 
     - name: Common software
@@ -45,12 +46,12 @@
 
     - name: Install docker
       import_tasks: tasks/install_docker.yml
-      when: first_run
+      when: first_run | default(false) or 'docker' in ansible_run_tags
       tags: docker
 
     - name: Working apps
       import_tasks: tasks/install_rpm_apps.yml
       vars:
         rpm_apps: "{{ working_rpms }}"
-      when: first_run
+      when: first_run | default(false) or 'work' in ansible_run_tags
       tags: work
