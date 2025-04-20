@@ -30,3 +30,7 @@
     - name: Zsh and shell tools
       import_tasks: tasks/install_shell.yml
       tags: shell
+
+    - name: Set the basic KDE packages
+      import_tasks: tasks/adjust_kde_packages.yml
+      tags: kde
