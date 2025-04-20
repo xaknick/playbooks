@@ -1,0 +1,6 @@
+development_software:
+  dnf:
+    - dotnet-sdk-8.0
+    - nodejs
+  copr: []
+  flatpak: []

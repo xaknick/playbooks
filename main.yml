@@ -4,6 +4,7 @@
     - vars/defaults.yml
     - vars/common_software.yml
     - vars/terminal_tools.yml
+    - vars/development_software.yml
     - vars/working_rpms.yml
 
   tasks:
@@ -36,8 +37,20 @@
       import_tasks: tasks/adjust_kde_packages.yml
       tags: kde
 
-    - name: Install working apps
-      include_tasks: tasks/install_rpm_apps.yml
+    - name: Development software
+      import_tasks: tasks/install_software.yml
+      vars:
+        software: "{{ development_software }}"
+      tags: development
+
+    - name: Install docker
+      import_tasks: tasks/install_docker.yml
+      when: first_run
+      tags: docker
+
+    - name: Working apps
+      import_tasks: tasks/install_rpm_apps.yml
       vars:
         rpm_apps: "{{ working_rpms }}"
+      when: first_run
       tags: work

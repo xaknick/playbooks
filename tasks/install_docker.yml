@@ -1,0 +1,29 @@
+- name: Install docker
+  package:
+    name: docker
+    state: present
+  become: true
+
+- name: Start docker service
+  service:
+    name: docker
+    state: started
+    enabled: true
+  become: true
+
+- name: Create docker group
+  group:
+    name: docker
+    state: present
+  become: true
+
+- name: Add a user {{ real_user | default(ansible_user_id) }} to the docker group
+  user:
+    name: "{{ real_user | default(ansible_user_id) }}"
+    groups: docker
+    append: true
+  become: true
+
+- name: Please relogin to the user's session to apply docker permissions
+  debug:
+    msg: "The user has been added to the docker group. Please log out and log back in (or run 'newgrp docker') for the changes to take effect."
