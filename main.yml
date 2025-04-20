@@ -1,3 +1,4 @@
+---
 - name: Fedora KDE automation
   hosts: localhost
   vars_files:
