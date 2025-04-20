@@ -2,5 +2,6 @@ development_software:
   dnf:
     - dotnet-sdk-8.0
     - nodejs
+    - postgresql
   copr: []
   flatpak: []
