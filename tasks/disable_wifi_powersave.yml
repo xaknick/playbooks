@@ -1,0 +1,17 @@
+---
+- name: Disable Wi-Fi power save via NetworkManager dispatcher script
+  become: true
+  copy:
+    dest: /etc/NetworkManager/dispatcher.d/disable-wifi-powersave.sh
+    mode: '0755'
+    owner: root
+    group: root
+    content: |
+      #!/bin/bash
+      IFACE=$1
+      STATUS=$2
+
+      if [ "$STATUS" = "up" ]; then
+          iw dev "$IFACE" set power_save off
+      fi
+

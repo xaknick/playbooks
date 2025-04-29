@@ -56,3 +56,8 @@
         rpm_apps: "{{ working_rpms }}"
       when: first_run | default(false) or 'work' in ansible_run_tags
       tags: work
+
+    - name: Disable powersave for Wifi
+      import_tasks: tasks/disable_wifi_powersave.yml
+      when: first_run | default(false) or 'wifi' in ansible_run_tags
+      tags: wifi
