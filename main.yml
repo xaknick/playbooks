@@ -6,7 +6,7 @@
     - vars/common_software.yml
     - vars/terminal_tools.yml
     - vars/development_software.yml
-    - vars/working_rpms.yml
+    - vars/working_software.yml
 
   tasks:
     - name: Environment configuration
@@ -51,9 +51,9 @@
       tags: docker
 
     - name: Working apps
-      import_tasks: tasks/install_rpm_apps.yml
+      import_tasks: tasks/install_software.yml
       vars:
-        rpm_apps: "{{ working_rpms }}"
+        software: "{{ working_software }}"
       when: first_run | default(false) or 'work' in ansible_run_tags
       tags: work
 

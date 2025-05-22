@@ -42,3 +42,9 @@
     remote: flathub
   loop: "{{ software.flatpak }}"
   when: software.flatpak is defined
+
+- name: Install rpm packages
+  import_tasks: tasks/install_rpm_apps.yml
+  vars:
+    rpm_apps: "{{ software.rpm }}"
+  when: software.rpm is defined
