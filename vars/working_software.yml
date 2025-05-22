@@ -9,3 +9,7 @@ working_software:
     - name: google-chrome
       url: https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
       dest: /tmp/google-chrome.rpm
+    - name: mockoon
+      url: https://github.com/mockoon/mockoon/releases/download/v9.2.0/mockoon-9.2.0.x86_64.rpm
+      dest: /tmp/mockoon.rpm
+
