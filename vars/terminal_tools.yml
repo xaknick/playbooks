@@ -8,7 +8,6 @@ terminal_tools:
     - tree
     - wget
     - curl
-
     - bat
     - zoxide
     - fastfetch
@@ -24,4 +23,3 @@ terminal_tools:
       name: lazygit
     - repo: rivenirvana/lazydocker
       name: lazydocker
-  flatpak: []
