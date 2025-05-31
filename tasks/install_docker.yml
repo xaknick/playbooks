@@ -4,6 +4,12 @@
     state: present
   become: true
 
+- name: Install docker compose
+  package:
+    name: docker-compose
+    state: present
+  become: true
+
 - name: Start docker service
   service:
     name: docker
