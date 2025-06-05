@@ -5,6 +5,7 @@ common_software:
     - neovim
     - gcc
     - g++ # for nvim plugins
+    - qbittorrent
   copr:
     - repo: wezfurlong/wezterm-nightly
       name: wezterm
