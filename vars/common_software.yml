@@ -15,3 +15,7 @@ common_software:
     - dev.zed.Zed
     - md.obsidian.Obsidian
     - org.cryptomator.Cryptomator
+  rpm:
+    - name: OnlyOffice
+      url: https://github.com/ONLYOFFICE/DesktopEditors/releases/latest/download/onlyoffice-desktopeditors.x86_64.rpm
+      dest: /tmp/onlyoffice.rpm
