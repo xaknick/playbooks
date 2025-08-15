@@ -6,6 +6,7 @@ common_software:
     - gcc
     - g++ # for nvim plugins
     - qbittorrent
+    - nextcloud-client
   copr:
     - repo: wezfurlong/wezterm-nightly
       name: wezterm
