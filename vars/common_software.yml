@@ -14,3 +14,4 @@ common_software:
     - app.zen_browser.zen
     - dev.zed.Zed
     - md.obsidian.Obsidian
+    - org.cryptomator.Cryptomator
