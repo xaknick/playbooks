@@ -48,3 +48,10 @@
   vars:
     rpm_apps: "{{ software.rpm }}"
   when: software.rpm is defined
+
+- name: Install pipx packages
+  community.general.pipx:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ software.pipx }}"
+  when: software.pipx is defined
