@@ -23,3 +23,5 @@ terminal_tools:
       name: lazygit
     - repo: rivenirvana/lazydocker
       name: lazydocker
+    - repo: varlad/zellij
+      name: zellij
