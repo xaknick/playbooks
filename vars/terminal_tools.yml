@@ -28,3 +28,7 @@ terminal_tools:
       name: zellij
   pipx:
     - posting
+  rpm:
+    - name: tabview
+      url: https://github.com/shshemi/tabiew/releases/download/v0.11.1/tabiew-x86_64-unknown-linux-gnu.rpm
+      dest: /tmp/tabview.rpm
