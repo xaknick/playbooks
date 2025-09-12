@@ -7,6 +7,7 @@ common_software:
     - g++ # for nvim plugins
     - qbittorrent
     - nextcloud-client
+    - yubikey-manager
   copr:
     - repo: wezfurlong/wezterm-nightly
       name: wezterm
@@ -15,6 +16,7 @@ common_software:
     - dev.zed.Zed
     - md.obsidian.Obsidian
     - org.cryptomator.Cryptomator
+    - org.keepassxc.KeePassXC
   rpm:
     - name: OnlyOffice
       url: https://github.com/ONLYOFFICE/DesktopEditors/releases/latest/download/onlyoffice-desktopeditors.x86_64.rpm
