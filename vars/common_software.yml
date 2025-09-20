@@ -8,6 +8,7 @@ common_software:
     - qbittorrent
     - nextcloud-client
     - yubikey-manager
+    - krita
   copr:
     - repo: wezfurlong/wezterm-nightly
       name: wezterm
