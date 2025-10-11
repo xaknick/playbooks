@@ -4,5 +4,3 @@ development_software:
     - golang
     - nodejs
     - postgresql
-  flatpak:
-    - me.iepure.devtoolbox
