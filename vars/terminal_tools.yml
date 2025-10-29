@@ -15,6 +15,7 @@ terminal_tools:
     - btop
     - ncdu
     - pipx # Install Python applications in isolated environments
+    - glow # MD viewer
   copr:
     - repo: alternateved/eza
       name: eza
