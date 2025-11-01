@@ -16,9 +16,6 @@ common_software:
     - app.zen_browser.zen
     - dev.zed.Zed
     - md.obsidian.Obsidian
+    - org.onlyoffice.desktopeditors
     # - org.cryptomator.Cryptomator
     # - org.keepassxc.KeePassXC
-  rpm:
-    - name: OnlyOffice
-      url: https://github.com/ONLYOFFICE/DesktopEditors/releases/latest/download/onlyoffice-desktopeditors.x86_64.rpm
-      dest: /tmp/onlyoffice.rpm
